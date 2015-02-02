@@ -2,23 +2,36 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>舜亚UED大乐透</title>
+    <title>舜亚全民彩</title>
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
     <div class="wrap">
-        <section id="current-number">
-            <b>当前开奖号码：</b>
-            <span>*,*,*,*,*</span>
-        </section>
-        <section>
-            <b>投注号码：</b>
-            <input type="text" maxlength="9" onkeypress="this.value=this.value.replace(/\D/g,'').replace(/.(?!$)/g,'$&,')"/>
-            <button id="touzhu">投注</button>
-        </section>
-    </div>
-    <div>
-        <a id="test" href="#">click</a>
-        <b id="num"></b>
+        <div class="header clearfix">
+            <div class="header-logo left">
+                <a href="#."></a>
+            </div>
+            <div class="header-nav right">
+                <ul class="clearfix">
+                    <li>欢迎来到舜亚娱乐中心!</li>
+                    <li>用户名:<b>匿名</b></li>
+                    <li>余额:<b>100</b> 金币 | <a href="#.">余额不足?</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <section id="current-number">
+                <b>当前开奖号码：</b>
+                <span>*,*,*,*,*</span>
+            </section>
+            <section>
+                <b>投注号码：</b>
+                <input type="text" maxlength="9" onkeypress="this.value=this.value.replace(/\D/g,'').replace(/.(?!$)/g,'$&,')"/>
+                <button id="touzhu">投注</button>
+            </section>
+            <a id="test" href="#">click</a>
+            <b id="num"></b>
+        </div>
     </div>
 </body>
 <script type="text/javascript" src="js/jquery.min.js"></script>
