@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>舜亚UED大乐透</title>
+</head>
+<body>
+    <div class="wrap">
+        <section id="current-number">
+            <b>当前开奖号码：</b>
+            <span>*,*,*,*,*</span>
+        </section>
+        <section>
+            <b>投注号码：</b>
+            <input type="text" maxlength="9" onkeypress="this.value=this.value.replace(/\D/g,'').replace(/.(?!$)/g,'$&,')"/>
+            <button id="touzhu">投注</button>
+        </section>
+    </div>
+    <div>
+        <a id="test" href="#">click</a>
+        <b id="num"></b>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    var RandomNumber = [];
+    RandomNumber.length = 5;
+    for(var i=0; i<RandomNumber.length; i++){
+        RandomNumber[i] = parseInt(Math.random()*10);
+    }
+    $("#touzhu").click(function(){
+        var bettingNumnber = $("input").val();
+        if(bettingNumnber == "" || bettingNumnber.replace(/\D/g,'').length<5){
+            alert("请输入完整的投注号码!");
+        }
+        else if(bettingNumnber == RandomNumber){
+            alert("恭喜您中奖!");
+            $("#current-number").children("span").text(RandomNumber);
+        }
+        else{
+            alert("未中奖,请再接再厉.");
+            $("#current-number").children("span").text(RandomNumber);
+        }
+        for(var i=0; i<RandomNumber.length; i++){
+            RandomNumber[i] = parseInt(Math.random()*10);
+        }
+    });
+    var initNumber = "";
+    var number = parseInt(Math.random()*10);
+    $("#test").click(function(){
+            if(initNumber != number){
+                $("#num").text(number);
+                initNumber = number;
+            }
+            number = parseInt(Math.random()*10);
+        
+    });
+    
+</script>
+</html>
